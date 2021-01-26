@@ -1,14 +1,13 @@
-node{
-		stage('Build'){
+pipeline{
+	any agent
+		stages{
+			stage('Build'){
 			steps{
 				sh "echo 'My first Pipeline'"
 				sh '''
 					sh 'echo "Showing mutilple steps"'
 					ls -ahl
 				'''
-				retry(3) {
-					sh "this job would fail"
-					}
 			}
 
 		}
@@ -18,4 +17,5 @@ node{
 		stage('Deploy'){
 
 		}
+}
 }
