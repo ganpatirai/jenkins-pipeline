@@ -1,5 +1,4 @@
-pipeline{
-	node{
+node{
 		stage('Build'){
 			steps{
 				sh "echo 'My first Pipeline'"
@@ -17,5 +16,4 @@ pipeline{
 		stage('Deploy'){
 
 		}
-}
 }
