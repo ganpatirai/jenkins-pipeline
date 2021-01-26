@@ -6,7 +6,9 @@ node{
 					sh 'echo "Showing mutilple steps"'
 					ls -ahl
 				'''
-				sh "this job would fail"
+				retry(3) {
+					sh "this job would fail"
+					}
 			}
 
 		}
